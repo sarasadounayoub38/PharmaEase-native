@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/checkOut.css">
+</head>
+
+<body>
+    <h1>CheckOut</h1>
+    <div class="container">
+        <h2>billing Method</h2>
+        <button name="PayBal" id="" onclick="payBal()">PayBal</button>
+        <button name="Bank card" id="" onclick="card()">Bank card</button>
+        <div id="bank">
+            <input type="text" name="cardNumber" id="" placeholder="Card Number">
+            <input type="text" name="expDate" id="" placeholder="Expiry Date MM/YY">
+            <input type="text" name="CVC/CVV" id="" placeholder="CVC/CVV">
+            <input type="text" name="name" id="" placeholder="Name on Card">
+        </div>
+        <button id="pay" onclick="pay()">Pay <span class="price">100</span></button>
+
+    </div>
+
+
+
+
+
+    <script src="js/checkOut.js"></script>
+</body>
+
+</html>
