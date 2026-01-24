@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/cart.css">
+</head>
+
+<body>
+    <main>
+ <header class="main-header">
+        <div class="container navbar">
+            <div class="logo">
+                <i class="fas fa-plus-circle"></i> Pharma<span>Ease</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="#section2">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                </ul>
+            </nav>
+            <div class="nav-right">
+                <div class="phone-info">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Free Consultation<br><strong>011-223-123-44</strong></span>
+                </div>
+                <button class="btn-Contact">Contact Us</button>
+            </div>
+        </div>
+    </header>
+
+
+
+        <h1>Cart</h1>
+        <div id="parent">
+            <div id="productsContainer">
+
+            </div>
+
+
+            <div class="Order">
+                <h3 class="card">Order</h3>
+                <!-- <div class="product">
+                <img src="" alt="">
+                <h3 class="productName">Panadol</h3>
+                <h4>Price:<span class="productPrice">100 p</span></h4>
+            </div> -->
+                <hr>
+                <div>Total Price:<span id="totalPrice"></span></div>
+                <button id="Proceed" onclick="Proceed()">Proceed To CheckOut</button>
+            </div>
+        </div>
+        </div>
+    </main>
+    <script src="js/cart.js"></script>
+</body>
+
+</html>

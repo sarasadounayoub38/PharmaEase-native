@@ -1,0 +1,9 @@
+.hidden {
+    display: none;
+}
+
+root {
+    --primary-color: purple;
+    --secondary-color: aqua;
+}
+
