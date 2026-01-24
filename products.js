@@ -1,5 +1,5 @@
-var allProducts = []; 
-var currentSelectedCategory = "all"; 
+var allProducts = [];
+var currentSelectedCategory = "all";
 
 fetchProducts();
 
@@ -18,7 +18,7 @@ function fetchProducts() {
 
 function displayProducts(productsList) {
     var container = document.getElementById("parent");
-    container.innerHTML = ""; 
+    container.innerHTML = "";
 
     for (var i = 0; i < productsList.length; i++) {
         var product = productsList[i];
@@ -40,7 +40,7 @@ function displayProducts(productsList) {
                 <span class="price-label">Price:</span>
                 <h3>${product.price} EGP</h3>
             </div>
-            <button class="add-btn" onclick="addToCart('${product.drugName}')">
+            <button class="add-btn" onclick="addToCart('${product.drugName}','${product.price} EGP','${product.image}','${product.description}')">
                 <i class="fas fa-shopping-cart"></i> Add to Cart
             </button>
         `;
@@ -67,8 +67,8 @@ function setupSidebar() {
             types.push(type);
             var listItem = document.createElement("li");
             listItem.textContent = type;
-            listItem.onclick = (function(t) { 
-                return function() { filterByCategory(t, this); }; 
+            listItem.onclick = (function (t) {
+                return function () { filterByCategory(t, this); };
             })(type);
             list.appendChild(listItem);
         }
@@ -78,18 +78,28 @@ function setupSidebar() {
 function filterByCategory(category, element) {
     currentSelectedCategory = category;
     var items = document.querySelectorAll("#consumeTypeList li");
-    for(var i=0; i<items.length; i++) { items[i].classList.remove("active"); }
+    for (var i = 0; i < items.length; i++) { items[i].classList.remove("active"); }
     element.classList.add("active");
     applyFilters();
 }
 
 function applyFilters() {
     var searchKey = document.getElementById("search").value.toLowerCase();
-    var filtered = allProducts.filter(function(item) {
+    var filtered = allProducts.filter(function (item) {
         var matchesSearch = item.drugName.toLowerCase().indexOf(searchKey) > -1;
         var matchesCategory = (currentSelectedCategory === "all") || (item.consumeType === currentSelectedCategory);
         return matchesSearch && matchesCategory;
     });
     displayProducts(filtered);
 }
+var i = 0;
+function addToCart(productName, productPrice, productImage, productDescription) {
 
+    localStorage.setItem(`${i}productName`, productName);
+    localStorage.setItem(`${i}productPrice`, productPrice);
+
+    localStorage.setItem(`${i}productImage`, productImage);
+    localStorage.setItem(`${i}productDescription`, productDescription);
+    localStorage.setItem(`i`, i);
+    i++;
+}
