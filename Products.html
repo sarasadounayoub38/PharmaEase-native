@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -130,4 +131,138 @@
     <!-- Scripts -->
     <script src="products.js"></script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaEase | Product Store</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="Style/Style.css">
+    <link rel="stylesheet" href="Style/products_Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container navbar">
+            <div class="logo">
+                <i class="fas fa-plus-circle"></i> Pharma<span>Ease</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="Home.html #section2">About Us</a></li>
+                    <li><a href="Home.html #services">Services</a></li>
+                </ul>
+            </nav>
+            <div class="nav-right">
+                <div class="phone-info">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Free Consultation<br><strong>011-223-123-44</strong></span>
+                </div>
+                <button class="btn-Contact">Contact Us</button>
+            </div>
+        </div>
+    </header>
+    <!-- Main Store Section -->
+    <div class="main-wrapper">
+        
+        <!-- Sidebar Filters -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>Quick Search</h3>
+                <input type="text" id="search" placeholder="Search for medicine..." oninput="applyFilters()">
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Usage Categories</h3>
+                <ul id="consumeTypeList">
+                    <li class="active" onclick="filterByCategory('all', this)">All Categories</li>
+                    <!-- Categories will be loaded here by JavaScript -->
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Product Listing Area -->
+        <main class="content">
+            <div class="store-header">
+                <h2>Our Medical Products</h2>
+                <p>Find genuine medications and healthcare essentials.</p>
+            </div>
+            <div id="parent">
+                <!-- Products will be injected here by JavaScript -->
+            </div>
+        </main>
+    </div>
+ <!-- Footer Area -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Healthcare Rd, New York</li>
+                        <li><i class="fas fa-phone-alt"></i> +1 212-445-678</li>
+                        <li><i class="fas fa-envelope"></i> support@pharmaease.com</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Medicines</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Departments</h3>
+                    <ul>
+                        <li><a href="#">Surgery</a></li>
+                        <li><a href="#">Family Care</a></li>
+                        <li><a href="#">Pediatrics</a></li>
+                        <li><a href="#">Neurology</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Prescriptions</a></li>
+                        <li><a href="#">Lab Tests</a></li>
+                        <li><a href="#">Consultation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 PharmaEase. All rights reserved.</p>
+                <div class="policy-links">
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="products.js"></script>
+</body>
+>>>>>>> 64c5feb697589961630b645405439f8cea97a381
 </html>
