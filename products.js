@@ -94,7 +94,7 @@ function applyFilters() {
 }
 var i = 0;
 function addToCart(productName, productPrice, productImage, productDescription) {
-
+    
     localStorage.setItem(`${i}productName`, productName);
     localStorage.setItem(`${i}productPrice`, productPrice);
 
@@ -102,4 +102,5 @@ function addToCart(productName, productPrice, productImage, productDescription) 
     localStorage.setItem(`${i}productDescription`, productDescription);
     localStorage.setItem(`i`, i);
     i++;
+
 }
