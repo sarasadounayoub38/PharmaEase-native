@@ -5,30 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/checkOut.css">
+    <link rel="stylesheet" href="./css/cart.css">
 </head>
 
 <body>
-    <h1>CheckOut</h1>
-    <div class="container">
-        <h2>billing Method</h2>
-        <button name="PayBal" id="" onclick="payBal()">PayBal</button>
-        <button name="Bank card" id="" onclick="card()">Bank card</button>
-        <div id="bank">
-            <input type="text" name="cardNumber" id="" placeholder="Card Number">
-            <input type="text" name="expDate" id="" placeholder="Expiry Date MM/YY">
-            <input type="text" name="CVC/CVV" id="" placeholder="CVC/CVV">
-            <input type="text" name="name" id="" placeholder="Name on Card">
+    <main>
+        <h1>Cart</h1>
+        <div id="parent">
+            <div id="productsContainer">
+
+            </div>
+
+
+            <div class="Order">
+                <h3 class="card">Order</h3>
+                <!-- <div class="product">
+                <img src="" alt="">
+                <h3 class="productName">Panadol</h3>
+                <h4>Price:<span class="productPrice">100 p</span></h4>
+            </div> -->
+                <hr>
+                <div>Total Price:<span id="totalPrice"></span></div>
+                <button id="Proceed" onclick="Proceed()">Proceed To CheckOut</button>
+            </div>
         </div>
-        <button id="pay" onclick="pay()">Pay <span class="price">100</span></button>
-
-    </div>
-
-
-
-
-
-    <script src="js/checkOut.js"></script>
+        </div>
+    </main>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>
