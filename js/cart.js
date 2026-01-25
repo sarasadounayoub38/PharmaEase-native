@@ -38,6 +38,7 @@ function displayProducts(productName, productPrice, productImage, productDescrip
             </button>
         `;
         container.appendChild(card);
+        console.log(productPrice);
         var priceLength = productPrice.length;
         console.log(priceLength)
         var priceNumberType = Number(productPrice.slice(0, priceLength - 4));

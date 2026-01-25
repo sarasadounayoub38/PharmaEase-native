@@ -76,23 +76,7 @@ function applyFilters() {
 
 
 
-var allProducts = [];
-var currentSelectedCategory = "all";
 
-fetchProducts();
-
-function fetchProducts() {
-    var request = new XMLHttpRequest();
-    request.open("GET", "https://raw.githubusercontent.com/rofiiiee/pharmacy-dataset/main/products.json");
-    request.send();
-    request.onreadystatechange = function () {
-        if (request.readyState == 4 && request.status == 200) {
-            allProducts = JSON.parse(request.responseText);
-            setupSidebar();
-            displayProducts(allProducts);
-        }
-    }
-}
 
 function displayProducts(productsList) {
     var container = document.getElementById("parent");

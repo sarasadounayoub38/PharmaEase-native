@@ -25,9 +25,9 @@ function displayProductsfav(productName, productPrice, productImage, productDesc
             <p class="description">${productDescription}</p>
             <div class="price-section">
                 <span class="price-label">Price:</span>
-                <h3>${productPrice} EGP</h3>
+                <h3>${productPrice}</h3>
             </div>
-            <button class="add-btn" onclick="addToCart('${productName}','${productPrice} EGP','${productImage}','${productDescription}')">
+            <button class="add-btn" onclick="addToCart('${productName}','${productPrice}','${productImage}','${productDescription}')">
                 <i class="fas fa-shopping-cart"></i> Add to Cart
             </button>
         `;
@@ -61,11 +61,16 @@ function remove(button) {
 
 
 function addToCart(productName, productPrice, productImage, productDescription) {
-    var i = localStorage.getItem('i');
+    var i = Number(localStorage.getItem('i'));
+    console.log(i);
+    console.log(typeof i)
     i++;
     alert("product is saved in cart");
     localStorage.setItem(`${i}productName`, productName);
-    localStorage.setItem(`${i}productPrice`, productPrice);
+    var priceLength = productPrice.length;
+    var price = Number(productPrice.slice(0, priceLength - 4));
+    console.log(price);
+    localStorage.setItem(`${i}productPrice`, price);
 
     localStorage.setItem(`${i}productImage`, productImage);
     localStorage.setItem(`${i}productDescription`, productDescription);

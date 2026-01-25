@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 [
   {
     "drugName": "Atorvastatin",
@@ -1178,7 +1178,7 @@
     "category": "Nutritional Drinks & Supplements",
     "countInStock": 100
   }
-=======
+
 [
   {
     "drugName": "Atorvastatin",
@@ -2358,5 +2358,5 @@
     "category": "Nutritional Drinks & Supplements",
     "countInStock": 100
   }
->>>>>>> 64c5feb697589961630b645405439f8cea97a381
+
 ]
