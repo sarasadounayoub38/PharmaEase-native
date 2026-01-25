@@ -1,40 +1,34 @@
-var Proceed = document.getElementById("Proceed");
-
-function Proceed() {
-    open("Checkout.html");
-}
 
 
-displayProducts();
 
-function displayProducts(productName, productPrice, productImage, productDescription) {
-    var productLength = localStorage.getItem("i");
+displayProductsfav();
+
+function displayProductsfav(productName, productPrice, productImage, productDescription) {
+    var productLength = localStorage.getItem("j");
     var container = document.getElementById("productsContainer");
     container.innerHTML = "";
 
     for (var j = 0; j <= productLength; j++) {
-        var productName = localStorage.getItem(`${j}productName`);
-        var productPrice = localStorage.getItem(`${j}productPrice`);
-        var productImage = localStorage.getItem(`${j}productImage`);
-        var productDescription = localStorage.getItem(`${j}productDescription`);
+        var productName = localStorage.getItem(`${j}productNamefav`);
+        var productPrice = localStorage.getItem(`${j}productPricefav`);
+        var productImage = localStorage.getItem(`${j}productImagefav`);
+        var productDescription = localStorage.getItem(`${j}productDescriptionfav`);
         var card = document.createElement("div");
 
         card.classList.add('product');
 
-        card.innerHTML = `
-            <div class="img-container">
-     
-                            <img src="${productImage}" alt="${productDescription}">
+        card.innerHTML = ` <div class="img-container">
+               <img src="${productImage}" alt="${productName}">
             </div>
-          
+           
             <h4>${productName}</h4>
             <p class="description">${productDescription}</p>
             <div class="price-section">
                 <span class="price-label">Price:</span>
-                <h3>${productPrice}</h3>
+                <h3>${productPrice} EGP</h3>
             </div>
-            <button class="add-btn" onclick="remove(this)">
-                <i class="fas fa-shopping-cart"></i> remove
+            <button class="add-btn" onclick="addToCart('${productName}','${productPrice} EGP','${productImage}','${productDescription}')">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
             </button>
         `;
         container.appendChild(card);

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 var allProducts = [];
 var currentSelectedCategory = "all";
 
@@ -93,9 +93,12 @@ function applyFilters() {
     });
     displayProducts(filtered);
 }
+
+
+
 var i = 0;
 function addToCart(productName, productPrice, productImage, productDescription) {
-alert("product is saved in cart");
+    alert("product is saved in cart");
     localStorage.setItem(`${i}productName`, productName);
     localStorage.setItem(`${i}productPrice`, productPrice);
 
@@ -104,7 +107,7 @@ alert("product is saved in cart");
     localStorage.setItem(`i`, i);
     i++;
 }
-=======
+
 var allProducts = [];
 var currentSelectedCategory = "all";
 
@@ -134,7 +137,7 @@ function displayProducts(productsList) {
 
         card.innerHTML = `
             <div class="img-container">
-                <i class="far fa-heart fav-icon" onclick="toggleFav(this)"></i>
+                <i class="far fa-heart fav-icon" onclick="toggleFav(this,'${product.drugName}','${product.price} EGP','${product.image}','${product.description}')"></i>
                 <img src="${product.image}" alt="${product.drugName}">
             </div>
             <div class="product-tags">
@@ -154,14 +157,22 @@ function displayProducts(productsList) {
         container.appendChild(card);
     }
 }
-
-function toggleFav(icon) {
+var j = 0;
+function toggleFav(icon, productName, productPrice, productImage, productDescription) {
     icon.classList.toggle('fas');
     icon.classList.toggle('far');
 
     icon.style.color = icon.classList.contains('fas')
         ? "#e74c3c"
         : "#888";
+
+    localStorage.setItem(`${j}productNamefav`, productName);
+    localStorage.setItem(`${j}productPricefav`, productPrice);
+
+    localStorage.setItem(`${j}productImagefav`, productImage);
+    localStorage.setItem(`${j}productDescriptionfav`, productDescription);
+    localStorage.setItem(`j`, j);
+    j++;
 }
 
 
@@ -199,16 +210,4 @@ function applyFilters() {
     });
     displayProducts(filtered);
 }
-var i = 0;
-function addToCart(productName, productPrice, productImage, productDescription) {
-    
-    localStorage.setItem(`${i}productName`, productName);
-    localStorage.setItem(`${i}productPrice`, productPrice);
 
-    localStorage.setItem(`${i}productImage`, productImage);
-    localStorage.setItem(`${i}productDescription`, productDescription);
-    localStorage.setItem(`i`, i);
-    i++;
-
-}
->>>>>>> 64c5feb697589961630b645405439f8cea97a381

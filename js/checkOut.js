@@ -6,8 +6,7 @@ function payBal() {
 
 function card() {
     BankDiv.classList.remove("hidden");
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> 64c5feb697589961630b645405439f8cea97a381
+
+
