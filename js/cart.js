@@ -1,7 +1,7 @@
-var Proceed = document.getElementById("Proceed");
 
 function Proceed() {
-    open("Checkout.html");
+    window.open("Checkout.html");
+
 }
 
 

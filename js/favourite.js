@@ -67,10 +67,10 @@ function addToCart(productName, productPrice, productImage, productDescription) 
     i++;
     alert("product is saved in cart");
     localStorage.setItem(`${i}productName`, productName);
-    var priceLength = productPrice.length;
-    var price = Number(productPrice.slice(0, priceLength - 4));
-    console.log(price);
-    localStorage.setItem(`${i}productPrice`, price);
+    // var priceLength = productPrice.length;
+    // var price = Number(productPrice.slice(0, priceLength - 4));
+    // console.log(price);
+    localStorage.setItem(`${i}productPrice`, productPrice);
 
     localStorage.setItem(`${i}productImage`, productImage);
     localStorage.setItem(`${i}productDescription`, productDescription);
