@@ -17,46 +17,24 @@ function fetchProducts() {
     }
 }
 
-function displayProducts(productsList) {
-    var container = document.getElementById("parent");
-    container.innerHTML = "";
-
-    for (var i = 0; i < productsList.length; i++) {
-        var product = productsList[i];
-        var card = document.createElement("div");
-        card.classList.add('product');
-
-        card.innerHTML = `
-            <div class="img-container">
-                <i class="far fa-heart fav-icon" onclick="toggleFav(this)"></i>
-                <img src="${product.image}" alt="${product.drugName}">
-            </div>
-            <div class="product-tags">
-                <span class="consume-type-tag">${product.consumeType}</span>
-                <span class="category-tag">${product.category}</span>
-            </div>
-            <h4>${product.drugName}</h4>
-            <p class="description">${product.description}</p>
-            <div class="price-section">
-                <span class="price-label">Price:</span>
-                <h3>${product.price} EGP</h3>
-            </div>
-            <button class="add-btn" onclick="addToCart('${product.drugName}','${product.price} EGP','${product.image}','${product.description}')">
-                <i class="fas fa-shopping-cart"></i> Add to Cart
-            </button>
-        `;
-        container.appendChild(card);
-    }
-}
-
-function toggleFav(icon) {
+var j = 0;
+function toggleFav(icon, productName, productPrice, productImage, productDescription) {
     icon.classList.toggle('fas');
     icon.classList.toggle('far');
 
     icon.style.color = icon.classList.contains('fas')
         ? "#e74c3c"
         : "#888";
+
+    localStorage.setItem(`${j}productNamefav`, productName);
+    localStorage.setItem(`${j}productPricefav`, productPrice);
+
+    localStorage.setItem(`${j}productImagefav`, productImage);
+    localStorage.setItem(`${j}productDescriptionfav`, productDescription);
+    localStorage.setItem(`j`, j);
+    j++;
 }
+
 
 
 function setupSidebar() {
@@ -96,17 +74,7 @@ function applyFilters() {
 
 
 
-var i = 0;
-function addToCart(productName, productPrice, productImage, productDescription) {
-    alert("product is saved in cart");
-    localStorage.setItem(`${i}productName`, productName);
-    localStorage.setItem(`${i}productPrice`, productPrice);
 
-    localStorage.setItem(`${i}productImage`, productImage);
-    localStorage.setItem(`${i}productDescription`, productDescription);
-    localStorage.setItem(`i`, i);
-    i++;
-}
 
 var allProducts = [];
 var currentSelectedCategory = "all";
@@ -157,24 +125,6 @@ function displayProducts(productsList) {
         container.appendChild(card);
     }
 }
-var j = 0;
-function toggleFav(icon, productName, productPrice, productImage, productDescription) {
-    icon.classList.toggle('fas');
-    icon.classList.toggle('far');
-
-    icon.style.color = icon.classList.contains('fas')
-        ? "#e74c3c"
-        : "#888";
-
-    localStorage.setItem(`${j}productNamefav`, productName);
-    localStorage.setItem(`${j}productPricefav`, productPrice);
-
-    localStorage.setItem(`${j}productImagefav`, productImage);
-    localStorage.setItem(`${j}productDescriptionfav`, productDescription);
-    localStorage.setItem(`j`, j);
-    j++;
-}
-
 
 function setupSidebar() {
     var list = document.getElementById("consumeTypeList");
@@ -211,3 +161,16 @@ function applyFilters() {
     displayProducts(filtered);
 }
 
+//addtocart
+
+var i = 0;
+function addToCart(productName, productPrice, productImage, productDescription) {
+    alert("product is saved in cart");
+    localStorage.setItem(`${i}productName`, productName);
+    localStorage.setItem(`${i}productPrice`, productPrice);
+
+    localStorage.setItem(`${i}productImage`, productImage);
+    localStorage.setItem(`${i}productDescription`, productDescription);
+    localStorage.setItem(`i`, i);
+    i++;
+}

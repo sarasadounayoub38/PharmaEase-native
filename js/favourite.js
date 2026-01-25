@@ -54,3 +54,23 @@ function remove(button) {
     // );
     // container[0].removeChild(product);
 }
+
+
+
+//addtocart
+
+
+function addToCart(productName, productPrice, productImage, productDescription) {
+    var i = localStorage.getItem('i');
+    i++;
+    alert("product is saved in cart");
+    localStorage.setItem(`${i}productName`, productName);
+    localStorage.setItem(`${i}productPrice`, productPrice);
+
+    localStorage.setItem(`${i}productImage`, productImage);
+    localStorage.setItem(`${i}productDescription`, productDescription);
+    localStorage.setItem(`i`, i);
+
+
+    i++;
+}
